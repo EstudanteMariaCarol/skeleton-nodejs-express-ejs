@@ -1,4 +1,4 @@
-const db = require(".../db")
+const db = require("../db")
 
 class Autor{
   static async inserir(data){
@@ -12,8 +12,12 @@ class Autor{
     return await connect.query("select * from autores");
   }
   static async atualizar(){
+     const connect = await db.connect();
+    return await connect.query("update * from autores");
   }
   static async deletar(){
+     const connect = await db.connect();
+    return await connect.query("delect * from autores");
   }
 }
 
