@@ -13,16 +13,17 @@ class Autor{
     return await connect.query("select * from autores");
   }
   
-  static async atualizar(){
+  static async atualizar(data, id){
     const connect = await db.connect();
     const sql = "update autores set nome=$1, sobrenome=$2, data_nascimento=$3, WHERE id=$4";
-    const values = [data.nome, data.sobrenome, data.data_nascimento, id]
+    const values = [data.nome, data.sobrenome, data.data_nascimento, data.id]
     return await connect.query(sql,values);
   }
   
-  static async deletar(){
-     const connect = await db.connect();
-    return await connect.query("delect * from autores");
+  static async deletar(data,id){
+    const connect = await db.connect();
+    const values = [data.id]
+    return await connect.query(sql,values);
   }
 }
 
