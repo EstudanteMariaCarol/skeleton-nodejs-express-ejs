@@ -31,7 +31,7 @@ router.delete('/deletar', async function(req, res, next) {
 });
 
 router.get('/livros', async function(req, res, next) {
-  const livros = await Livro.selecionar();
+  const livros = await Livro.selecionarlivro();
   res.json(livros.rows);
 });
 
